@@ -1,4 +1,4 @@
-# Homework 1 #
+# Homework 0 #
 
 ## 1. ##
 **Regularization**. Using the accompanying *Hitters* dataset, we will explore regression models to predict a player's Salary from other variables. You can use any programming languages or frameworks that you wish.

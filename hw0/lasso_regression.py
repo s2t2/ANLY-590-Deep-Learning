@@ -2,7 +2,7 @@
 # @Author: Kornraphop Kawintiranon
 # @Date:   2018-09-12 00:48:54
 # @Last Modified by:   Kornraphop Kawintiranon
-# @Last Modified time: 2018-09-13 13:02:10
+# @Last Modified time: 2018-09-13 15:47:20
 
 __author__ = "Kornraphop Kawintiranon"
 __email__ = "kornraphop.k@gmail.com"
@@ -14,6 +14,7 @@ import numpy as np
 import pandas as pd
 
 from sklearn import linear_model
+from sklearn.metrics import mean_squared_error
 
 def main():
 	# Read data from file 'Hitters.csv' 
@@ -86,6 +87,11 @@ def main():
 	# Check coefficients
 	print(lasso.coef_)
 	print("Feature number left in the model: " + str(len([ x for x in lasso.coef_ if x != 0 ])))
+
+	# Check MSE
+	y_pred = lasso.predict(X)
+	mse = mean_squared_error(Y, y_pred)
+	print("MSE: {0}".format(mse))	# 96243.08961334323
 
 	plt.show()
 
